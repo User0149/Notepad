@@ -1,22 +1,19 @@
-let overflow=false;
-function compile(){
-    window.localStorage.setItem('code',document.getElementById('editor').value);
-    
-    if(document.getElementById('editor').scrollHeight > document.getElementById('editor').clientHeight){
-        document.getElementById('display').innerHTML=localStorage.getItem('code')+'\n\n\n\n\n';
-        overflow=true;
-    }
-    else{
-        document.getElementById('display').innerHTML=localStorage.getItem('code');
-        overflow=false;
-    }
+const editor = document.getElementById("editor");
+const display = document.getElementById("display");
 
+function compile() {    
+    display.innerHTML = editor.value;
     MathJax.typeset();
+    
+    localStorage.setItem("editorValue", editor.value);
 }
 
-if(localStorage.getItem('code')==null){
-    localStorage.setItem('code','');
+if (localStorage.getItem("editorValue") === null){
+    localStorage.setItem("editorValue", "");
 }
 
-document.getElementById('editor').value=localStorage.getItem('code');
+// initialise editor value
+editor.value = localStorage.getItem("editorValue");
+
+// display output of editor in display box
 compile();

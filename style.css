@@ -1,32 +1,45 @@
-#editor{
-    background-color: white;
-    padding: 16px;
-    border: 1px solid rgb(153, 153, 153);
-    white-space: pre-wrap;
+#container {
+    display: flex;
+    height: 100%;
     width: 100%;
-    resize: none;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
-    float: left;
-    display: block;
-    overflow: auto;
 
-    height: calc(100% - 10px);
-    width: calc(50% - 5px);
-}
-#display{
-    padding: 16px;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
-    border: 1px solid rgb(153, 153, 153);
-    background-color: white;
-    white-space: pre-wrap;
-    word-wrap: break-word; 
-    /* resize: none; */
-    float: right;
-    display: block;
+    font-size: medium;
+}
+
+#editor {
+    box-sizing: border-box;
+
+    height: 100%;
+    width: calc(50% - 5px);
+
+    margin-right: 10px;
+    padding: 1rem;
+
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+
+    resize: none;
     overflow: auto;
+    scrollbar-width: none;
     
-    height: calc(100% - 34px - 10px);
-    width: calc(50% - 34px - 5px);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+#display {
+    box-sizing: border-box;
+
+    height: 100%;
+    width: calc(50% - 5px);
+
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    overflow: auto;
+    scrollbar-width: none;
 }
